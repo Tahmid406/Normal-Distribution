@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(innerWidth, innerHeight);
+        background(0);
+        stroke(255);
+        strokeWeight(0.5);
+      }
+
+      let values = [];
+      function draw() {
+        for (let i = 0; i < 100; i++) {
+          const gause = floor(randomGaussian(0, 0.2) * width);
+          //   const x = map(gause, -1, 1, 0, width);
+          if (values[gause]) values[gause]++;
+          else values[gause] = 1;
+          line(gause + width / 2, values[gause] - 1, gause + width / 2, values[gause]);
+        }
+      }
+    </script>
+  </body>
+</html>
