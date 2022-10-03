@@ -30,7 +30,7 @@
           //   const x = map(gause, -1, 1, 0, width);
           if (values[gause]) values[gause]++;
           else values[gause] = 1;
-          line(gause + width / 2, values[gause] - 1, gause + width / 2, values[gause]);
+          line(gause + width / 2, height - values[gause] + 1, gause + width / 2, height - values[gause]);
         }
       }
     </script>
